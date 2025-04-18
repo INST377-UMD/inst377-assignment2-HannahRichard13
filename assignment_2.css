@@ -1,0 +1,27 @@
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+#main-nav {
+    background-color: red;
+    text-align: center;
+    color: darkred
+}
+
+#main-nav li a{
+    color: darkred;
+    text-decoration: none;
+}
+
+#main-nav li :hover{
+    background-color: white;
+    color: black;
+}
+
+#main-nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+}
+
