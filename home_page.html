@@ -13,13 +13,11 @@
 
         <nav id="main-nav">
             <ul>
-                <li><a href="home_page.html">Home Page</a></li>
+                <li><a href="home_page.html">Home</a></li>
                 <li><a href="stocks_page.html">Stocks</a></li>
-                <li><a href="dogs_page.html">Doggos</a></li>
+                <li><a href="dogs_page.html">Dogs</a></li>
             </ul>
         </nav>
-
-
 
         <h1>These are some different activities we can try!</h1>
         <div class="main-container">
@@ -29,9 +27,9 @@
                     <button class="button-50" role="button">Dogs</button>
                 </div>
 
-                <div class="quote-box">
+                <div class="quote-box" id = 'quote_box'>
                     <h2>Quote of the Page Load</h2>
-                    <h4 id='quote'>Lorem ipsum</h4>
+                    <h4 id='quote'></h4>
                 </div>
 
                 <div class="listening-box">
@@ -54,8 +52,8 @@
                           </ul>
                     </h4>
                     <div id=buttons>
-                        <button id="buttons1">Turn On Listening</button>
-                        <button id="buttons2">Turn Off Listening</button>  
+                        <button id="buttons1" onclick="startListen()">Turn On Listening</button>
+                        <button id="buttons2" onclick="stopListen()">Turn Off Listening</button>  
                     </div>
                        
                                     

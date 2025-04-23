@@ -2,6 +2,7 @@
     <head>
         <title>Assignment 2</title>
         <link rel="stylesheet" href="assignment_2.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
         <script src="assignment_2.js" defer></script>
     </head>
 
@@ -14,7 +15,7 @@
             <ul>
                 <li><a href="home_page.html">Home Page</a></li>
                 <li><a href="stocks_page.html">Stocks</a></li>
-                <li><a href="dogs_page.html">Doggos</a></li>
+                <li><a href="dogs_page.html">Dogs</a></li>
             </ul>
         </nav>
 
@@ -39,8 +40,8 @@
                       </ul>
                 </h4>
                 <div id=buttons>
-                    <button id="buttons1">Turn On Listening</button>
-                    <button id="buttons2">Turn Off Listening</button>  
+                    <button id="buttons1" onclick="startListen()">Turn On Listening</button>
+                    <button id="buttons2" onclick="stopListen()">Turn Off Listening</button>  
                 </div>              
             </div>
 
