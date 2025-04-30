@@ -65,6 +65,10 @@ function checkStorage() {
 }
 
 
+function lookupStocks() {
+    
+}
+
 
 window.onload = function() {
     populateQuote();

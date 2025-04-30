@@ -290,3 +290,9 @@ body {
     line-height: 88px;
   }
 }
+
+#lookup {
+  border-radius: 5px;
+  background-color: lightgreen; 
+  color: black;
+}
