@@ -71,3 +71,38 @@ new Chart(ctx, {
         }
     });
  }
+
+function loadRedditAPI() {
+  return fetch('https://tradestie.com/api/v1/apps/reddit?date=2022-04-03').then((result) =>
+  result.json
+  )
+};
+
+function loadUpSite() {
+  const stockData = loadRedditAPI();
+  console.log(APIResponse)
+
+  const stockTable = document.getElementById('stockTable')
+
+  stockData.forEach((stock) => {
+    const tableRow = document.createElement('tr')
+    const stockTicker = document.createElement('td');
+    const commentCount = document.createElement('td');
+    const sentiment = document.createElement('td');
+
+    stockTicker.innerHTML = stock['ticker']
+    commentCount.innerHTML = stock['no_of_comments']
+    sentiment.innerHTML = stock['sentiment']
+
+    tableRow.appendChild(stockTicker)
+    tableRow.appendChild(commentCount)
+    tableRow.appendChild(sentiment)
+
+    stockTable.append(tableRow)
+
+
+  })
+
+
+
+}
