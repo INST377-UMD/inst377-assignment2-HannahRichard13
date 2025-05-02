@@ -296,3 +296,9 @@ body {
   background-color: lightgreen; 
   color: black;
 }
+
+#chartDiv {
+  width: 60%;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+}

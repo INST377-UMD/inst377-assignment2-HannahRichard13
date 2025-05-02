@@ -2,6 +2,7 @@
     <head>
         <title>Assignment 2</title>
         <link rel="stylesheet" href="assignment_2.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
         <script src="assignment_2.js" defer></script>
     </head>
@@ -19,15 +20,21 @@
             </ul>
         </nav>
         <h1>Let's chart some stocks!</h1>
-        <input type="text" id="sticker" required>
-        <br>
-        <select id="dayCount">
-            <option value="30days">30 Days</option>
-            <option value="60days">60 Days</option>
-            <option value="90days">90 Days</option>
-        </select>
-        <br>
-        <button id='lookup' type="submit" onclick="lookupStocks()">Lookup!</button>
+        <form onsubmit="populateChart(); return false;">
+            <input type="text" id="ticker" required>
+            <br>
+            <select id="dayCount">
+                <option value="30">30 Days</option>
+                <option value="60">60 Days</option>
+                <option value="90">90 Days</option>
+            </select>
+            <br>
+            <button id='lookup' type="submit">Lookup!</button>
+        </form>
+ 
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
 
         <div class="content-area">
             <div class="listening-box">
@@ -54,6 +61,7 @@
                     <button id="buttons2" onclick="stopListen()">Turn Off Listening</button>  
                 </div>              
             </div>
+        </div>
 
 
     </body>
