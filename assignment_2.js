@@ -9,6 +9,7 @@ function populateQuote() {
             });
         } else {
 
+
         }
     };
 
@@ -29,10 +30,28 @@ const commands = {
     } else if (page === 'dogs') {
         window.location.href = 'dogs_page.html';
     }},
+
 'look up *stock': (stock) => {
     document.getElementById('ticker').value = stock;
     document.getElementById('dayCount').value = '30'
     populateChart();
+},
+'load dog breed *breed': (breed) => {
+    const breedButtons = document.querySelectorAll('#breed-button-container button');
+    const input = breed.toLowerCase();
+    console.log(input)
+
+    breedButtons.forEach((button) => {
+        const text = button.textContent.toLowerCase().trim();
+        console.log(text)
+        if (text === input) {
+            console.log('match')
+            button.click();
+        } else {
+            console.log('no match')
+        }
+    })
+
 }
 };
 

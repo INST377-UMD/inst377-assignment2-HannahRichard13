@@ -339,3 +339,31 @@ body {
   text-align: center;
   color: black;
 }
+
+#dogCarousel {
+  align-items: center;
+  display: flex;
+
+}
+
+#dogCarousel img {
+  width: 612px; 
+  height: 612px
+}
+
+#breed-buttons {
+  padding: 10px 40px;
+  margin: 4px 2px;
+  text-align: center;
+  background-color: red;
+  color: white;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+#breed-Info-container {
+  background-color: white;
+  color: black;
+  border-color: black;
+
+}
