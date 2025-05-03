@@ -1,19 +1,18 @@
 function populateQuote() {
-    if (document.querySelector("#quote_box")) {
+    if (document.querySelector("#quote_box")) { // Only fetches api on home page
         const quote = document.getElementById('quote')
         fetch('https://zenquotes.io/api/random')
         .then((result) => result.json())
         .then((resultJson) => {
             console.log(resultJson);
-            quote.innerHTML = `"${resultJson[0].q}" - ${resultJson[0].a}`;
+            quote.innerHTML = `"${resultJson[0].q}" - ${resultJson[0].a}`; // Get quote and author from api
             });
         } else {
-
 
         }
     };
 
-const commands = {
+const commands = { // Declaring commands for JS Audio Library 
 
 'hello': () => { alert('Hello world!'); },
 

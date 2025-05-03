@@ -1,9 +1,9 @@
-function epochToDate(epochTime) {
+function epochToDate(epochTime) { // Convert epoch to date
     const date = new Date(epochTime * 1000);
     return date;
   }
   
-async function lookupStocks() {
+async function lookupStocks() { // loop up stock based on form input
     const ticker = document.getElementById('ticker').value.toUpperCase();
     const dayRange = parseInt(document.getElementById('dayCount').value);    
     const today = new Date();
@@ -21,7 +21,7 @@ async function lookupStocks() {
   return stockData
  }
  
- async function populateChart() {
+ async function populateChart() { // Populate chart based on api data
  
     const stockData = await lookupStocks();
  
@@ -40,7 +40,7 @@ async function lookupStocks() {
         }
   )
  
-    const ctx = document.getElementById('myChart');
+    const ctx = document.getElementById('myChart'); // Chart code
  
 new Chart(ctx, {
         type: 'line',
@@ -64,7 +64,7 @@ new Chart(ctx, {
     });
  }
 
-function loadRedditAPI() {
+function loadRedditAPI() { // Load reddit data
   return fetch('https://tradestie.com/api/v1/apps/reddit?date=2022-04-03').then((result) =>
   result.json()
   )
@@ -76,7 +76,7 @@ async function loadUpSite() {
 
   const stockTable = document.getElementById('stockTable')
 
-  stockData.forEach((stock) => {
+  stockData.forEach((stock) => { // Populate table
     if (stock['no_of_comments'] > 11) {
       const tableRow = document.createElement('tr')
       const link = document.createElement('a');

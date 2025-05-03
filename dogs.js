@@ -1,9 +1,9 @@
-function loadDogAPI() {
+function loadDogAPI() { // Fetch dog images from api
     return fetch('https://dog.ceo/api/breeds/image/random').then((result) =>
     result.json()
     )};
 
-async function loadCarousel() {
+async function loadCarousel() { // Get 10 images and add to carousel
     carousel = document.getElementById('dogCarousel')
     carousel.innerHTML = '';
 
@@ -20,7 +20,7 @@ async function loadCarousel() {
     simpleslider.getSlider();
  }
 
- function loadBreedAPI() {
+ function loadBreedAPI() { // Load dog breed and information for button and info box
     return fetch(' https://dogapi.dog/api/v2/breeds')
     .then((result) => result.json())
     .then((data) => {
@@ -58,7 +58,7 @@ async function loadCarousel() {
 
                 breedInfoArea.appendChild(breedArea)
             })
-            
+
             buttonArea.appendChild(button)
         })
     })
