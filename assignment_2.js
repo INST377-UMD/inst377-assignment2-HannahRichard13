@@ -13,7 +13,6 @@ function populateQuote() {
         }
     };
 
-
 const commands = {
 
 'hello': () => { alert('Hello world!'); },
@@ -51,10 +50,8 @@ const commands = {
             console.log('no match')
         }
     })
-
 }
 };
-
 
 function startListen() {
     if (annyang) {
@@ -71,16 +68,16 @@ function stopListen() {
     if (annyang) {
         annyang.abort();
         console.log('stopped listening');
+
     }
 }
 
 
 function checkStorage() {
-
-
     if (sessionStorage.getItem('isListening') === 'true') {
         console.log('Listening is on')
         annyang.start();
+
     } else {
         sessionStorage.getItem('isListening') === 'false' 
         console.log('Listening is off')

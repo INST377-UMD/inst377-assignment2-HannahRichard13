@@ -1,12 +1,12 @@
 function loadDogAPI() {
     return fetch('https://dog.ceo/api/breeds/image/random').then((result) =>
     result.json()
-    )
-  };
+    )};
 
 async function loadCarousel() {
     carousel = document.getElementById('dogCarousel')
     carousel.innerHTML = '';
+
     let dogImages = []
     for (let i = 0; i < 10; i++) {
         const dogImage = await loadDogAPI();
@@ -14,11 +14,11 @@ async function loadCarousel() {
         const image = document.createElement('img');
         image.src = dogImage['message']
         dogImages.push(image)
+
     }
     dogImages.forEach((i) => carousel.appendChild(i))
     simpleslider.getSlider();
  }
-
 
  function loadBreedAPI() {
     return fetch(' https://dogapi.dog/api/v2/breeds')
@@ -33,6 +33,7 @@ async function loadCarousel() {
             button.textContent = breed.attributes.name
             button.className = 'button-24'
             button.setAttribute('breed-id', breed.id)
+
             button.addEventListener('click', () => {
                 breedInfoArea.innerHTML = '';
                 const breedArea = document.createElement('div')
@@ -43,7 +44,6 @@ async function loadCarousel() {
 
                 const description = document.createElement('h3')
                 description.textContent = 'Description: ' + breed.attributes.description
-
 
                 const minLife = document.createElement('h3')
                 minLife.textContent = 'Min Life: ' + breed.attributes.life.min
@@ -58,6 +58,7 @@ async function loadCarousel() {
 
                 breedInfoArea.appendChild(breedArea)
             })
+            
             buttonArea.appendChild(button)
         })
     })
