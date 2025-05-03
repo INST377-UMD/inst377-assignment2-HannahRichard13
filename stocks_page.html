@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>Assignment 2</title>
+        <link rel="stylesheet" href="assignment_2.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+        <script src="assignment_2.js" defer></script>
+        <script src="stocks.js" defer></script>
+    </head>
+
+    <body>
+        <header id="bar">
+            <h1> Assignment 2 - Stocks</h1>
+        </header>
+
+        <nav id="main-nav">
+            <ul>
+                <li><a href="home_page.html">Home Page</a></li>
+                <li><a href="stocks_page.html">Stocks</a></li>
+                <li><a href="dogs_page.html">Dogs</a></li>
+            </ul>
+        </nav>
+        <h1>Let's chart some stocks!</h1>
+        <form onsubmit="populateChart(); return false;">
+            <input type="text" id="ticker" maxlength ='5' required> <!-- Accept stock ticker -->
+            <br>
+            <select id="dayCount">
+                <option value="30">30 Days</option> <!-- Choose amount of days -->
+                <option value="60">60 Days</option>
+                <option value="90">90 Days</option>
+            </select>
+            <br>
+            <button class="button-3" role="button" type="submit">Lookup!</button> <!-- Custom button -->
+
+        </form>
+ 
+        <div>
+            <canvas id="myChart"></canvas> <!-- Display chart -->
+        </div>
+
+        <div id="table">
+            <table id="stockTable"> <!-- List of top 5 stocks -->
+                <tr>
+                    <th>TICKER</th>
+                    <th>COMMENT COUNT</th>
+                    <th>SENTIMENT</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content-area">
+            <div class="listening-box">
+                <h1>In this web page there are options to Navigate using Audio!</h1>
+                <h4>Ensure your Mic is enabled to be ale to use this feature</h4>
+                <h4>
+                    <ul>
+                        <li>Lookup a stock</li> <!-- Added audio criteria -->
+                        <ul>
+                            <li>Lookup &lt;stock&gt;</li>
+                        </ul>
+                        <li>Navigate to a different Page</li>
+                        <ul>
+                            <li>Say: Navigate to &lt;page&gt;</li>
+                        </ul>
+                        <li>Change the Page Color</li>
+                        <ul>
+                            <li>Say: Change the color to &lt;color&gt;</li>
+                        </ul>
+                        <li>Say Hello Back to you!</li>
+                        <ul>
+                            <li>Say: Hello</li>
+                        </ul>
+                      </ul>
+                </h4>
+                <div id=buttons>
+                    <button id="buttons1" onclick="startListen()">Turn On Listening</button>
+                    <button id="buttons2" onclick="stopListen()">Turn Off Listening</button>  
+                </div>              
+            </div>
+        </div>
+
+
+    </body>
+</html>

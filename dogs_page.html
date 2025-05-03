@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Assignment 2</title>
+        <link rel="stylesheet" href="assignment_2.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+        <script src="assignment_2.js" defer></script>
+        <script src="dogs.js" defer></script>
+    </head>
+
+    <body>
+        <header id="bar">
+            <h1> Assignment 2 - Dogs</h1>
+        </header>
+
+        <nav id="main-nav">
+            <ul>
+                <li><a href="home_page.html">Home</a></li>
+                <li><a href="stocks_page.html">Stocks</a></li>
+                <li><a href="dogs_page.html">Dogs</a></li>
+            </ul>
+        </nav>
+        <h1>Doggos! &#128054;</h1>
+
+        <div class="content-area"> <!-- Dog carousel  -->
+            <div id='dogCarousel' style="width:800px; height:612px" data-simple-slider>
+
+            </div>
+        </div>
+
+        <div class="content-area"> <!-- Dog breed buttons-->
+            <div id="breed-button-container">
+
+            </div>
+        </div>
+        <div id="breed-Info-container"> <!-- Dog breed information -->
+
+        </div>
+
+
+        <div class="content-area">
+            <div class="listening-box"> <!-- Added audio criteria -->
+                <h1>In this web page there are options to Navigate using Audio!</h1>
+                <h4>Ensure your Mic is enabled to be ale to use this feature</h4>
+                <h4>
+                    <ul>
+                        <li>Load Dog Breed Information</li>
+                        <ul>
+                            <li>Say: Load Dog Breed &lt;Dog Breed Name&gt;</li>
+                        </ul>
+                        <li>Navigate to a different Page</li>
+                        <ul>
+                            <li>Say: Navigate to &lt;page&gt;</li>
+                        </ul>
+                        <li>Change the Page Color</li>
+                        <ul>
+                            <li>Say: Change the color to &lt;color&gt;</li>
+                        </ul>
+                        <li>Say Hello Back to you!</li>
+                        <ul>
+                            <li>Say: Hello</li>
+                        </ul>
+                      </ul>
+                </h4>
+                <div id=buttons>
+                    <button id="buttons1" onclick="startListen()">Turn On Listening</button>
+                    <button id="buttons2" onclick="stopListen()">Turn Off Listening</button>  
+                </div>              
+            </div>
+
+
+    </body>
+</html>
