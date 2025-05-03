@@ -23,7 +23,7 @@
         </nav>
         <h1>Let's chart some stocks!</h1>
         <form onsubmit="populateChart(); return false;">
-            <input type="text" id="ticker" required>
+            <input type="text" id="ticker" maxlength ='5' required>
             <br>
             <select id="dayCount">
                 <option value="30">30 Days</option>
@@ -31,7 +31,8 @@
                 <option value="90">90 Days</option>
             </select>
             <br>
-            <button id='lookup' type="submit">Lookup!</button>
+            <button class="button-3" role="button" type="submit">Lookup!</button>
+
         </form>
  
         <div>

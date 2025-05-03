@@ -31,7 +31,7 @@ async function loadCarousel() {
         breeds.forEach((breed) => {
             const button = document.createElement('button')
             button.textContent = breed.attributes.name
-            button.id = 'breed-buttons'
+            button.className = 'button-24'
             button.setAttribute('breed-id', breed.id)
             button.addEventListener('click', () => {
                 breedInfoArea.innerHTML = '';
