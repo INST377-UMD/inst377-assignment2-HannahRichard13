@@ -302,3 +302,40 @@ body {
   margin-left: 12.5%;
   margin-right: 12.5%;
 }
+
+#table {
+    padding: 20px;
+    width: 300px;
+    background-color: white;
+    border-color: black;
+}
+
+#stockTable {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+}
+
+#stockTable th {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  border: 2px solid black;
+}
+
+#stockTable td {
+  padding: 5px;
+  background-color: white;
+  color: black;
+  border: 8px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+#stockTable a {
+  display: inline-block;
+  text-align: center;
+  color: black;
+}

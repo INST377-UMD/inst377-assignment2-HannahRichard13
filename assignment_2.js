@@ -28,7 +28,12 @@ const commands = {
         window.location.href = 'stocks_page.html';
     } else if (page === 'dogs') {
         window.location.href = 'dogs_page.html';
-    }}
+    }},
+'look up *stock': (stock) => {
+    document.getElementById('ticker').value = stock;
+    document.getElementById('dayCount').value = '30'
+    populateChart();
+}
 };
 
 

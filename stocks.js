@@ -74,35 +74,45 @@ new Chart(ctx, {
 
 function loadRedditAPI() {
   return fetch('https://tradestie.com/api/v1/apps/reddit?date=2022-04-03').then((result) =>
-  result.json
+  result.json()
   )
 };
 
-function loadUpSite() {
-  const stockData = loadRedditAPI();
-  console.log(APIResponse)
+async function loadUpSite() {
+  const stockData = await loadRedditAPI();
+  console.log(stockData)
 
   const stockTable = document.getElementById('stockTable')
 
   stockData.forEach((stock) => {
-    const tableRow = document.createElement('tr')
-    const stockTicker = document.createElement('td');
-    const commentCount = document.createElement('td');
-    const sentiment = document.createElement('td');
+    if (stock['no_of_comments'] > 11) {
+      const tableRow = document.createElement('tr')
+      // const stockTicker = document.createElement('td');
+      const link = document.createElement('a');
+      link.href =  `https://finance.yahoo.com/quote/${stock['ticker']}`
+      link.textContent = stock['ticker']
+      link.target = '_blank'
 
-    stockTicker.innerHTML = stock['ticker']
-    commentCount.innerHTML = stock['no_of_comments']
-    sentiment.innerHTML = stock['sentiment']
+      const commentCount = document.createElement('td');
+      commentCount.innerHTML = stock['no_of_comments']
 
-    tableRow.appendChild(stockTicker)
-    tableRow.appendChild(commentCount)
-    tableRow.appendChild(sentiment)
+      const sentiment = document.createElement('td');
+      tableRow.appendChild(link)
+      tableRow.appendChild(commentCount)
+      const sentimentImage = document.createElement('img');
+      if (stock['sentiment'] === "Bullish" ) {
+        sentimentImage.src = 'https://static.thenounproject.com/png/3328202-200.png';
+      } else {
+        sentimentImage.src = 'https://cdn.iconscout.com/icon/free/png-256/free-bearish-icon-download-in-svg-png-gif-file-formats--downtrend-animal-stocks-finance-investment-pack-business-icons-1570417.png';
 
-    stockTable.append(tableRow)
+      }
+      sentimentImage.width = 100;
+      sentiment.appendChild(sentimentImage)
+      tableRow.appendChild(sentiment)
+      stockTable.append(tableRow)
 
-
+    }
   })
-
-
-
 }
+
+window.onload = loadUpSite;
